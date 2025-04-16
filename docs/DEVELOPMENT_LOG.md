@@ -1,4 +1,4 @@
-## Project Setup - [Date]
+## Project Setup - [25/04/16]
 
 ### Initial Setup
 - Created new GitHub repository
