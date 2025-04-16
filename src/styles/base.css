@@ -1,0 +1,56 @@
+/* Base Styles */
+@import './design-tokens.css';
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+
+/* TV-specific optimizations */
+@media (min-width: var(--tv-width)) and (min-height: var(--tv-height)) {
+  html {
+    font-size: var(--tv-base-font-size);
+  }
+}
+
+@media (max-width: var(--tv-width)), (max-height: var(--tv-height)) {
+  html {
+    font-size: calc(var(--tv-base-font-size) * min(calc(100vw / var(--tv-width)), calc(100vh / var(--tv-height))));
+  }
+}
+
+/* Focus Styles - Global */
+:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-outline-offset);
+  transform: scale(var(--focus-scale));
+  transition: all var(--transition-duration) var(--transition-timing);
+} 

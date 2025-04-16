@@ -1,0 +1,55 @@
+.tv-button {
+  height: var(--button-height);
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-duration) var(--transition-timing);
+  
+  /* Add flexbox for vertical centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Prevent text wrapping */
+  white-space: nowrap;
+  
+  /* Ensure consistent line height */
+  line-height: 1;
+}
+
+.tv-button:focus {
+  outline: var(--focus-outline-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-outline-offset);
+  transform: scale(var(--focus-scale));
+}
+
+.tv-button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+.tv-button--secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.tv-button--small {
+  padding: calc(var(--button-padding) * 0.75);
+  font-size: var(--font-size-small);
+  min-height: calc(var(--button-height) * 0.75);
+}
+
+.tv-button--medium {
+  padding: var(--button-padding);
+  font-size: var(--font-size-body);
+  min-height: var(--button-height);
+}
+
+.tv-button--large {
+  padding: calc(var(--button-padding) * 1.25);
+  font-size: var(--font-size-h3);
+  min-height: calc(var(--button-height) * 1.25);
+}
