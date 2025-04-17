@@ -2,6 +2,7 @@ import type { Preview } from "@storybook/react";
 import React from 'react';
 
 // Import design system styles in correct order
+import '../src/styles/design-tokens.css';
 import '../src/styles/base.css';
 import '../src/styles/utilities.css';
 

@@ -13,7 +13,7 @@
   
   /* Default size */
   height: var(--button-height);
-  padding: 0 1.75em;
+  padding: 1.5em 1.5em;
   font-size: var(--font-size-body);
   min-width: 120px;
   border-radius: var(--button-radius);
@@ -39,24 +39,21 @@
 
 /* Sizes */
 .tv-button--small {
-  height: calc(var(--button-height) * 0.75);
+  /* height: calc(var(--button-height) * 0.75); */
   font-size: var(--font-size-small);
   min-width: 100px;
-  padding: 0 1.5em;
 }
 
 .tv-button--medium {
-  height: var(--button-height);
+  /* height: var(--button-height); */
   font-size: var(--font-size-body);
   min-width: 120px;
-  padding: 0 1.75em;
 }
 
 .tv-button--large {
-  height: calc(var(--button-height) * 1.25);
+  /* height: calc(var(--button-height) * 1.25); */
   font-size: var(--font-size-h3);
   min-width: 140px;
-  padding: 0 2em;
 }
 
 /* Size-specific secondary styles */
