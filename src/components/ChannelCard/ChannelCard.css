@@ -39,11 +39,6 @@
   justify-content: center;
 }
 
-.tv-channel-card__playing-icon {
-  color: var(--color-text-primary);
-  font-size: 24px;
-}
-
 .tv-channel-card__title {
   margin-top: var(--spacing-md);
   font-family: var(--font-primary);

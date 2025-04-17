@@ -1,5 +1,6 @@
 import React from 'react';
 import './ChannelCard.css';
+import { PlayingAnimation } from '../PlayingAnimation/PlayingAnimation';
 
 export interface ChannelCardProps {
   /**
@@ -65,7 +66,7 @@ export const ChannelCard: React.FC<ChannelCardProps> = ({
         )}
         {isPlaying && (
           <div className="tv-channel-card__playing-indicator">
-            <span className="tv-channel-card__playing-icon">▶</span>
+            <PlayingAnimation />
           </div>
         )}
       </div>
