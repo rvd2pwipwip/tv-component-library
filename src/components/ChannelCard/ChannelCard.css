@@ -64,9 +64,13 @@
 }
 
 /* Focus states for TV navigation */
-.tv-channel-card:focus-visible .tv-channel-card__thumbnail {
+.tv-channel-card:focus {
+  outline: none;
+}
+
+.tv-channel-card:focus .tv-channel-card__thumbnail {
   outline: var(--focus-outline-width) solid var(--color-focus-ring);
-  outline-offset: var(--focus-outline-offset);
+  outline-offset: 0;
   transform: scale(var(--focus-scale));
 }
 
@@ -75,6 +79,6 @@
   border: 2px solid var(--color-primary);
 }
 
-.tv-channel-card--playing:focus-visible .tv-channel-card__thumbnail {
+.tv-channel-card--playing:focus .tv-channel-card__thumbnail {
   border-color: var(--color-focus-ring);
 } 
