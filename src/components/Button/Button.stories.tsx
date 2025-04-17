@@ -1,5 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { Button } from './Button';
+
+// Example icon component
+const PlayIcon: React.FC = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M8 5v14l11-7z" />
+  </svg>
+);
 
 const meta: Meta<typeof Button> = {
   title: 'TV/Button',
@@ -18,6 +26,7 @@ const meta: Meta<typeof Button> = {
           ['Size Variants', ['ButtonSmall', 'ButtonMedium', 'ButtonLarge']],
           ['Style Variants', ['ButtonPrimary', 'ButtonSecondary']],
           ['Combined Variants', ['ButtonSmallSecondary', 'ButtonLargeSecondary']],
+          ['With Icons', ['ButtonWithIcon', 'ButtonWithIconSmall', 'ButtonWithIconLarge']],
         ],
       },
     },
@@ -41,6 +50,9 @@ const meta: Meta<typeof Button> = {
     onClick: {
       action: 'clicked',
       description: 'Optional click handler',
+    },
+    icon: {
+      description: 'Optional icon to display before the label',
     },
   },
 };
@@ -113,5 +125,33 @@ export const ButtonLargeSecondary: Story = {
     label: 'Large Secondary',
     variant: 'secondary',
     size: 'large',
+  },
+};
+
+// Icon variants
+export const ButtonWithIcon: Story = {
+  args: {
+    label: 'Play',
+    variant: 'primary',
+    size: 'medium',
+    icon: <PlayIcon />,
+  },
+};
+
+export const ButtonWithIconSmall: Story = {
+  args: {
+    label: 'Play',
+    variant: 'primary',
+    size: 'small',
+    icon: <PlayIcon />,
+  },
+};
+
+export const ButtonWithIconLarge: Story = {
+  args: {
+    label: 'Play',
+    variant: 'primary',
+    size: 'large',
+    icon: <PlayIcon />,
   },
 }; 

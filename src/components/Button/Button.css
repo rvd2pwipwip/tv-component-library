@@ -20,6 +20,27 @@
   border-radius: var(--button-radius);
 }
 
+.tv-button__icon {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5em;
+}
+
+.tv-button__icon svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.tv-button--small .tv-button__icon svg {
+  width: 1em;
+  height: 1em;
+}
+
+.tv-button--large .tv-button__icon svg {
+  width: 1.4em;
+  height: 1.4em;
+}
+
 .tv-button:focus {
   outline: var(--focus-outline-width) solid var(--color-focus-ring);
   outline-offset: 0;
