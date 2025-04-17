@@ -26,7 +26,7 @@ const meta: Meta<typeof Button> = {
           ['Size Variants', ['ButtonSmall', 'ButtonMedium', 'ButtonLarge']],
           ['Style Variants', ['ButtonPrimary', 'ButtonSecondary']],
           ['Combined Variants', ['ButtonSmallSecondary', 'ButtonLargeSecondary']],
-          ['With Icons', ['ButtonWithIcon', 'ButtonWithIconSmall', 'ButtonWithIconLarge']],
+          ['With Icons', ['ButtonPreIcon', 'ButtonPreIconSmall', 'ButtonPreIconLarge']],
         ],
       },
     },
@@ -146,8 +146,8 @@ export const ButtonLargeSecondary: Story = {
   },
 };
 
-// Icon variants
-export const ButtonWithIcon: Story = {
+// Icon variants (icon before label)
+export const ButtonPreIcon: Story = {
   args: {
     label: 'Play',
     variant: 'primary',
@@ -157,7 +157,7 @@ export const ButtonWithIcon: Story = {
   },
 };
 
-export const ButtonWithIconSmall: Story = {
+export const ButtonPreIconSmall: Story = {
   args: {
     label: 'Play',
     variant: 'primary',
@@ -167,7 +167,7 @@ export const ButtonWithIconSmall: Story = {
   },
 };
 
-export const ButtonWithIconLarge: Story = {
+export const ButtonPreIconLarge: Story = {
   args: {
     label: 'Play',
     variant: 'primary',
