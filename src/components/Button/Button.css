@@ -9,6 +9,7 @@
   font-weight: var(--font-weight-bold);
   white-space: nowrap;
   line-height: 1;
+  letter-spacing: 0.75px;
   transition: all var(--transition-duration) var(--transition-timing);
   
   /* Default size */
@@ -33,34 +34,22 @@
 
 .tv-button--secondary {
   background-color: transparent;
-  border: 1px solid var(--color-text-secondary);
+  border: 2px solid var(--color-text-secondary);
   color: var(--color-text-primary);
 }
 
 /* Sizes */
 .tv-button--small {
-  /* height: calc(var(--button-height) * 0.75); */
   font-size: var(--font-size-small);
   min-width: 100px;
 }
 
 .tv-button--medium {
-  /* height: var(--button-height); */
   font-size: var(--font-size-body);
   min-width: 120px;
 }
 
 .tv-button--large {
-  /* height: calc(var(--button-height) * 1.25); */
   font-size: var(--font-size-h3);
   min-width: 140px;
-}
-
-/* Size-specific secondary styles */
-.tv-button--small.tv-button--secondary {
-  border-width: 1px;
-}
-
-.tv-button--large.tv-button--secondary {
-  border-width: 2px;
 }
