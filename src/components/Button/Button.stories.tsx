@@ -27,7 +27,6 @@ const meta: Meta<typeof Button> = {
           ['Style Variants', ['ButtonPrimary', 'ButtonSecondary']],
           ['Combined Variants', ['ButtonSmallSecondary', 'ButtonLargeSecondary']],
           ['With Icons', ['ButtonWithIcon', 'ButtonWithIconSmall', 'ButtonWithIconLarge']],
-          'InteractiveButton',
         ],
       },
     },
@@ -174,17 +173,6 @@ export const ButtonWithIconLarge: Story = {
     variant: 'primary',
     size: 'large',
     showIcon: true,
-    icon: <PlayIcon />,
-  },
-};
-
-// Interactive story with icon toggle
-export const InteractiveButton: Story = {
-  args: {
-    label: 'Interactive Button',
-    variant: 'primary',
-    size: 'medium',
-    showIcon: false,
     icon: <PlayIcon />,
   },
 }; 
