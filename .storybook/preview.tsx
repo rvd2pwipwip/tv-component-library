@@ -1,8 +1,7 @@
 import type { Preview } from "@storybook/react";
 import React from 'react';
 
-// Import design system styles
-import '../src/styles/design-tokens.css';
+// Import design system styles in correct order
 import '../src/styles/base.css';
 import '../src/styles/utilities.css';
 
@@ -32,9 +31,12 @@ const preview: Preview = {
     (Story) => (
       <div style={{ 
         backgroundColor: 'var(--color-background)',
-        minHeight: '100vh',
         padding: 'var(--spacing-lg)',
-        color: 'var(--color-text-primary)'
+        color: 'var(--color-text-primary)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        // border: '1px solid var(--color-text-secondary)',
       }}>
         <Story />
       </div>
