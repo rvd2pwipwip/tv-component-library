@@ -27,6 +27,7 @@ const meta: Meta<typeof Button> = {
           ['Style Variants', ['ButtonPrimary', 'ButtonSecondary']],
           ['Combined Variants', ['ButtonSmallSecondary', 'ButtonLargeSecondary']],
           ['With Icons', ['ButtonWithIcon', 'ButtonWithIconSmall', 'ButtonWithIconLarge']],
+          'InteractiveButton',
         ],
       },
     },
@@ -51,8 +52,10 @@ const meta: Meta<typeof Button> = {
       action: 'clicked',
       description: 'Optional click handler',
     },
-    icon: {
-      description: 'Optional icon to display before the label',
+    showIcon: {
+      control: 'boolean',
+      description: 'Whether to show an icon',
+      defaultValue: false,
     },
   },
 };
@@ -66,6 +69,8 @@ export const Default: Story = {
     label: 'Button',
     variant: 'primary',
     size: 'medium',
+    showIcon: false,
+    icon: <PlayIcon />,
   },
 };
 
@@ -75,6 +80,8 @@ export const ButtonSmall: Story = {
     label: 'Small',
     variant: 'primary',
     size: 'small',
+    showIcon: false,
+    icon: <PlayIcon />,
   },
 };
 
@@ -83,6 +90,8 @@ export const ButtonMedium: Story = {
     label: 'Medium',
     variant: 'primary',
     size: 'medium',
+    showIcon: false,
+    icon: <PlayIcon />,
   },
 };
 
@@ -91,6 +100,8 @@ export const ButtonLarge: Story = {
     label: 'Large',
     variant: 'primary',
     size: 'large',
+    showIcon: false,
+    icon: <PlayIcon />,
   },
 };
 
@@ -100,6 +111,8 @@ export const ButtonPrimary: Story = {
     label: 'Primary',
     variant: 'primary',
     size: 'medium',
+    showIcon: false,
+    icon: <PlayIcon />,
   },
 };
 
@@ -108,6 +121,8 @@ export const ButtonSecondary: Story = {
     label: 'Secondary',
     variant: 'secondary',
     size: 'medium',
+    showIcon: false,
+    icon: <PlayIcon />,
   },
 };
 
@@ -117,6 +132,8 @@ export const ButtonSmallSecondary: Story = {
     label: 'Small Secondary',
     variant: 'secondary',
     size: 'small',
+    showIcon: false,
+    icon: <PlayIcon />,
   },
 };
 
@@ -125,6 +142,8 @@ export const ButtonLargeSecondary: Story = {
     label: 'Large Secondary',
     variant: 'secondary',
     size: 'large',
+    showIcon: false,
+    icon: <PlayIcon />,
   },
 };
 
@@ -134,6 +153,7 @@ export const ButtonWithIcon: Story = {
     label: 'Play',
     variant: 'primary',
     size: 'medium',
+    showIcon: true,
     icon: <PlayIcon />,
   },
 };
@@ -143,6 +163,7 @@ export const ButtonWithIconSmall: Story = {
     label: 'Play',
     variant: 'primary',
     size: 'small',
+    showIcon: true,
     icon: <PlayIcon />,
   },
 };
@@ -152,6 +173,18 @@ export const ButtonWithIconLarge: Story = {
     label: 'Play',
     variant: 'primary',
     size: 'large',
+    showIcon: true,
+    icon: <PlayIcon />,
+  },
+};
+
+// Interactive story with icon toggle
+export const InteractiveButton: Story = {
+  args: {
+    label: 'Interactive Button',
+    variant: 'primary',
+    size: 'medium',
+    showIcon: false,
     icon: <PlayIcon />,
   },
 }; 

@@ -22,6 +22,7 @@ export interface ButtonProps {
    * Optional icon to display before the label
    */
   icon?: React.ReactNode;
+  showIcon?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -30,16 +31,23 @@ export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   size = 'medium',
   icon,
+  showIcon,
   ...props
 }) => {
+  const buttonClasses = [
+    'tv-button',
+    `tv-button--${variant}`,
+    `tv-button--${size}`,
+  ].join(' ');
+
   return (
     <button
       type="button"
-      className={`tv-button tv-button--${variant} tv-button--${size}`}
+      className={buttonClasses}
       onClick={onClick}
       {...props}
     >
-      {icon && <span className="tv-button__icon">{icon}</span>}
+      {showIcon && <span className="tv-button__icon">{icon}</span>}
       <span className="tv-button__label">{label}</span>
     </button>
   );
