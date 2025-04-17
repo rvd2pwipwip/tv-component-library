@@ -43,7 +43,6 @@
 
 .tv-button:focus {
   outline: var(--focus-outline-width) solid var(--color-focus-ring);
-  outline-offset: 0;
   transform: scale(var(--focus-scale));
 }
 
