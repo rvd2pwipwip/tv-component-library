@@ -32,6 +32,13 @@
 - TV-optimized focus states
 - Accessibility requirements
 
+### Design Tokens Architecture
+- Separate repository for design tokens
+- Independent versioning from components
+- Single source of truth for design values
+- Shared across component library and consuming projects
+- Managed as a separate npm package
+
 ## Development History
 
 ### Initial Prototype (SMTV02)
