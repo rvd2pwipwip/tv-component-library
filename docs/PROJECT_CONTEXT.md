@@ -38,6 +38,8 @@
 - Single source of truth for design values
 - Shared across component library and consuming projects
 - Managed as a separate npm package
+- Package name: `@smtv/design-tokens`
+- Installed as a dependency in the component library
 
 ## Development History
 

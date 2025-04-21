@@ -1,0 +1,49 @@
+.token-test {
+  padding: var(--spacing-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--component-button-radius);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.token-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.token-section h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.token-item {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--component-button-radius);
+  color: var(--color-text-primary);
+  text-align: center;
+  padding: var(--spacing-sm);
+}
+
+.token-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.spacing-item {
+  height: 30px;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  padding-left: var(--spacing-md);
+  color: var(--color-text-primary);
+  border-radius: var(--component-button-radius);
+} 

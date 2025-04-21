@@ -1,5 +1,9 @@
 /* Import design tokens first */
-@import './design-tokens.css';
+/* Comment out local tokens to avoid conflicts */
+/* @import './design-tokens.css'; */
+
+/* Import npm package design tokens */
+@import './design-tokens-npm.css';
 
 /* Import utilities */
 @import './utilities.css';
@@ -7,6 +11,7 @@
 /* Import component styles */
 @import '../components/Button/Button.css';
 @import '../components/ChannelCard/ChannelCard.css';
+@import '../components/TokenTest/TokenTest.css';
 /* Add other component imports here */
 
 /* Global styles */
@@ -17,7 +22,7 @@
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-family-primary);
   font-size: var(--tv-base-font-size);
   background-color: var(--color-background);
   color: var(--color-text-primary);
