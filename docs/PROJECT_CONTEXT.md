@@ -60,9 +60,13 @@
 - Moving components from prototype
 - Establishing documentation
 - Creating development workflow
+- Integrating design tokens from npm package
+- Ensuring consistent token usage across components
 
 ## Next Steps
 1. Set up Storybook
 2. Move ChannelCard component
 3. Document component usage
-4. Establish testing patterns 
+4. Establish testing patterns
+5. Consider adding missing icon size variables to the design tokens package
+6. Create additional components based on TV app prototype 
