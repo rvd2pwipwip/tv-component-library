@@ -37,7 +37,9 @@
   --spacing-xxl: 48px;
 
   /* Component Sizes */
-  --button-height: 48px;
+  --button-height-small: 36px;
+  --button-height-medium: 48px;
+  --button-height-large: 64px;
   --button-padding: 16px 24px;
   --button-radius: 8px;
   --button-min-width: 120px;

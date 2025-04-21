@@ -13,7 +13,7 @@
   transition: all var(--transition-duration) var(--transition-timing);
   
   /* Default size */
-  height: var(--button-height);
+  height: var(--button-height-medium);
   padding: var(--button-padding);
   font-size: var(--font-size-body);
   min-width: var(--button-min-width);
@@ -63,14 +63,17 @@
 .tv-button--small {
   font-size: var(--font-size-small);
   min-width: var(--button-min-width-small);
+  height: var(--button-height-small);
 }
 
 .tv-button--medium {
   font-size: var(--font-size-body);
   min-width: var(--button-min-width);
+  height: var(--button-height-medium);
 }
 
 .tv-button--large {
   font-size: var(--font-size-h3);
   min-width: var(--button-min-width-large);
+  height: var(--button-height-large);
 }
