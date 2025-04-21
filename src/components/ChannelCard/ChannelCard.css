@@ -61,8 +61,8 @@
 }
 
 .tv-channel-card:focus .tv-channel-card__thumbnail {
-  outline: var(--focus-outline-width) var(--focus-ring-style) var(--color-focus-ring);
-  outline-offset: var(--focus-ring-offset);
+  outline: var(--focus-outline-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-outline-offset);
   transform: scale(var(--animation-focus-scale));
 }
 

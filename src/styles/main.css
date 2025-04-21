@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-family-primary);
   font-size: var(--tv-base-font-size);
   background-color: var(--color-background);
   color: var(--color-text-primary);
