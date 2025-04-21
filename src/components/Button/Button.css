@@ -14,9 +14,9 @@
   
   /* Default size */
   height: var(--button-height);
-  padding: 1.5em 1.5em;
+  padding: var(--button-padding);
   font-size: var(--font-size-body);
-  min-width: 120px;
+  min-width: var(--button-min-width);
   border-radius: var(--button-radius);
 }
 
@@ -27,22 +27,23 @@
 }
 
 .tv-button__icon svg {
-  width: 1.2em;
-  height: 1.2em;
+  width: var(--icon-size-medium);
+  height: var(--icon-size-medium);
 }
 
 .tv-button--small .tv-button__icon svg {
-  width: 1em;
-  height: 1em;
+  width: var(--icon-size-small);
+  height: var(--icon-size-small);
 }
 
 .tv-button--large .tv-button__icon svg {
-  width: 1.4em;
-  height: 1.4em;
+  width: var(--icon-size-large);
+  height: var(--icon-size-large);
 }
 
 .tv-button:focus {
-  outline: var(--focus-outline-width) solid var(--color-focus-ring);
+  outline: var(--focus-outline-width) var(--focus-ring-style) var(--color-focus-ring);
+  outline-offset: var(--focus-ring-offset);
   transform: scale(var(--focus-scale));
 }
 
@@ -61,15 +62,15 @@
 /* Sizes */
 .tv-button--small {
   font-size: var(--font-size-small);
-  min-width: 100px;
+  min-width: var(--button-min-width-small);
 }
 
 .tv-button--medium {
   font-size: var(--font-size-body);
-  min-width: 120px;
+  min-width: var(--button-min-width);
 }
 
 .tv-button--large {
   font-size: var(--font-size-h3);
-  min-width: 140px;
+  min-width: var(--button-min-width-large);
 }

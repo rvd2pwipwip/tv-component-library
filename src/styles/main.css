@@ -1,0 +1,35 @@
+/* Import design tokens first */
+@import './design-tokens.css';
+
+/* Import utilities */
+@import './utilities.css';
+
+/* Import component styles */
+@import '../components/Button/Button.css';
+@import '../components/ChannelCard/ChannelCard.css';
+/* Add other component imports here */
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--tv-base-font-size);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* TV-specific base styles */
+.tv-app {
+  width: var(--tv-width);
+  height: var(--tv-height);
+  overflow: hidden;
+  position: relative;
+} 

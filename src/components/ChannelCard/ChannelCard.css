@@ -46,14 +46,7 @@
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
   text-align: left;
-  
-  /* 2-line text truncation */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.2;
-  height: calc(1.2em * 2);
+  composes: tv-text-truncate-2 from '../../styles/utilities.css';
 }
 
 /* Focus states for TV navigation */
@@ -62,8 +55,8 @@
 }
 
 .tv-channel-card:focus .tv-channel-card__thumbnail {
-  outline: var(--focus-outline-width) solid var(--color-focus-ring);
-  outline-offset: 0;
+  outline: var(--focus-outline-width) var(--focus-ring-style) var(--color-focus-ring);
+  outline-offset: var(--focus-ring-offset);
   transform: scale(var(--focus-scale));
 }
 

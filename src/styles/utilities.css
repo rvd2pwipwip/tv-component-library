@@ -36,4 +36,50 @@
 .tv-focus:focus-visible {
   transform: scale(var(--focus-scale));
   box-shadow: 0 0 0 var(--focus-outline-width) var(--color-focus-ring);
-} 
+}
+
+/* Text Truncation */
+.tv-text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.2;
+  height: calc(1.2em * 2);
+}
+
+/* Focus States */
+.tv-focus-ring {
+  outline: var(--focus-outline-width) var(--focus-ring-style) var(--color-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  transform: scale(var(--focus-scale));
+}
+
+/* Flexbox Utilities */
+.tv-flex {
+  display: flex;
+}
+
+.tv-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tv-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Spacing Utilities */
+.tv-mt-md { margin-top: var(--spacing-md); }
+.tv-mb-md { margin-bottom: var(--spacing-md); }
+.tv-ml-md { margin-left: var(--spacing-md); }
+.tv-mr-md { margin-right: var(--spacing-md); }
+
+.tv-p-md { padding: var(--spacing-md); }
+.tv-pt-md { padding-top: var(--spacing-md); }
+.tv-pb-md { padding-bottom: var(--spacing-md); }
+.tv-pl-md { padding-left: var(--spacing-md); }
+.tv-pr-md { padding-right: var(--spacing-md); } 

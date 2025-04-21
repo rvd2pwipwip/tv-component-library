@@ -40,13 +40,23 @@
   --button-height: 48px;
   --button-padding: 16px 24px;
   --button-radius: 8px;
+  --button-min-width: 120px;
+  --button-min-width-small: 100px;
+  --button-min-width-large: 140px;
+  
   --card-size: 300px;
   --card-padding: 24px;
   --card-radius: 24px;
+  
   --input-height: 48px;
   --input-padding: 12px 16px;
   --input-radius: 8px;
   --header-height: 100px;
+
+  /* Icon Sizes */
+  --icon-size-small: 1em;
+  --icon-size-medium: 1.2em;
+  --icon-size-large: 1.4em;
 
   /* Animation */
   --transition-duration: 200ms;
@@ -55,6 +65,8 @@
   
   /* Focus */
   --focus-outline-width: 10px;
+  --focus-ring-offset: 0;
+  --focus-ring-style: solid;
   
   /* TV-specific */
   --tv-width: 1920px;
