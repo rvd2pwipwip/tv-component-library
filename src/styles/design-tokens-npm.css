@@ -1,5 +1,5 @@
 /* Import design tokens from npm package */
-@import '@smtv/design-tokens/dist/tokens.css';
+@import '@smtv/design-tokens/dist/design-tokens.css';
 
 /* This file is for testing the npm package tokens before replacing the local tokens */
 /* Once verified, we'll update main.css to use this import instead of the local tokens */ 

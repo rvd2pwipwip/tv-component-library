@@ -1,7 +1,3 @@
-/* Import design tokens first */
-/* Comment out local tokens to avoid conflicts */
-/* @import './design-tokens.css'; */
-
 /* Import npm package design tokens */
 @import './design-tokens-npm.css';
 
@@ -22,7 +18,7 @@
 }
 
 body {
-  font-family: var(--font-family-primary);
+  font-family: var(--font-primary);
   font-size: var(--tv-base-font-size);
   background-color: var(--color-background);
   color: var(--color-text-primary);

@@ -1,5 +1,6 @@
 /* Utility Classes */
-@import './design-tokens.css';
+/* Comment out local tokens to avoid conflicts */
+/* @import './design-tokens.css'; */
 
 /* Text Colors */
 .text-primary { color: var(--color-text-primary); }
@@ -30,11 +31,11 @@
 
 /* TV-Specific Focus */
 .tv-focus {
-  transition: all var(--transition-duration) var(--transition-timing);
+  transition: all var(--animation-transition-duration) var(--animation-transition-timing);
 }
 
 .tv-focus:focus-visible {
-  transform: scale(var(--focus-scale));
+  transform: scale(var(--animation-focus-scale));
   box-shadow: 0 0 0 var(--focus-outline-width) var(--color-focus-ring);
 }
 
@@ -51,9 +52,9 @@
 
 /* Focus States */
 .tv-focus-ring {
-  outline: var(--focus-outline-width) var(--focus-ring-style) var(--color-focus-ring);
-  outline-offset: var(--focus-ring-offset);
-  transform: scale(var(--focus-scale));
+  outline: var(--focus-outline-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-outline-offset);
+  transform: scale(var(--animation-focus-scale));
 }
 
 /* Flexbox Utilities */

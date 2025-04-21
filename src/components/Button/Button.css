@@ -5,7 +5,7 @@
   justify-content: center;
   border: none;
   cursor: pointer;
-  font-family: var(--font-family-primary);
+  font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   white-space: nowrap;
   line-height: 1;
@@ -17,7 +17,7 @@
   padding: 16px 24px;
   font-size: var(--font-size-body);
   min-width: var(--component-button-min-width-default);
-  border-radius: var(--component-button-radius);
+  border-radius: 8px;
 }
 
 .tv-button__icon {
@@ -42,8 +42,8 @@
 }
 
 .tv-button:focus {
-  outline: var(--focus-outline-width) var(--focus-ring-style) var(--color-focus-ring);
-  outline-offset: var(--focus-ring-offset);
+  outline: var(--focus-outline-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-outline-offset);
   transform: scale(var(--animation-focus-scale));
 }
 

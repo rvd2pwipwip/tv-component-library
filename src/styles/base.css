@@ -1,5 +1,6 @@
 /* Base Styles */
-@import './design-tokens.css';
+/* Comment out local tokens to avoid conflicts */
+/* @import './design-tokens.css'; */
 
 /* Reset */
 * {
@@ -51,6 +52,6 @@ h3 { font-size: var(--font-size-h3); }
 :focus-visible {
   outline: var(--focus-outline-width) solid var(--color-focus-ring);
   outline-offset: var(--focus-outline-offset);
-  transform: scale(var(--focus-scale));
-  transition: all var(--transition-duration) var(--transition-timing);
+  transform: scale(var(--animation-focus-scale));
+  transition: all var(--animation-transition-duration) var(--animation-transition-timing);
 } 
