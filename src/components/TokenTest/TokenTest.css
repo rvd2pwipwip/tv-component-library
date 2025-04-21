@@ -40,10 +40,18 @@
 
 .spacing-item {
   height: 30px;
-  background-color: var(--color-primary);
   display: flex;
   align-items: center;
-  padding-left: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.spacing-item__bar {
+  height: 30px;
+  background-color: var(--color-primary);
+}
+
+.spacing-item__label {
+  margin-left: var(--spacing-md);
   color: var(--color-text-primary);
-  border-radius: var(--component-button-radius);
+  white-space: nowrap;
 } 

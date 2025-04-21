@@ -38,11 +38,26 @@ const TokenTest: React.FC = () => {
       <div className="token-section">
         <h3>Spacing</h3>
         <div className="token-list">
-          <div className="spacing-item" style={{ width: 'var(--spacing-xs)' }}>XS (--spacing-xs)</div>
-          <div className="spacing-item" style={{ width: 'var(--spacing-sm)' }}>SM (--spacing-sm)</div>
-          <div className="spacing-item" style={{ width: 'var(--spacing-md)' }}>MD (--spacing-md)</div>
-          <div className="spacing-item" style={{ width: 'var(--spacing-lg)' }}>LG (--spacing-lg)</div>
-          <div className="spacing-item" style={{ width: 'var(--spacing-xl)' }}>XL (--spacing-xl)</div>
+          <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-xs)' }}></div>
+            <div className="spacing-item__label">XS (--spacing-xs)</div>
+          </div>
+          <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-sm)' }}></div>
+            <div className="spacing-item__label">SM (--spacing-sm)</div>
+          </div>
+          <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-md)' }}></div>
+            <div className="spacing-item__label">MD (--spacing-md)</div>
+          </div>
+          <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-lg)' }}></div>
+            <div className="spacing-item__label">LG (--spacing-lg)</div>
+          </div>
+          <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-xl)' }}></div>
+            <div className="spacing-item__label">XL (--spacing-xl)</div>
+          </div>
         </div>
       </div>
     </div>
