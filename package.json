@@ -1,24 +1,40 @@
 {
-  "name": "tv-component-library",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@smtv/tv-component-library",
+  "version": "1.0.1",
+  "description": "TV-optimized React component library for audio streaming applications",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build": "vite build",
+    "prepare": "npm run build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "tv",
+    "react",
+    "components",
+    "audio",
+    "streaming",
+    "ui"
+  ],
+  "author": "SMTV Team",
   "license": "ISC",
-  "dependencies": {
-    "@smtv/design-tokens": "^1.0.1",
-    "lottie-react": "^2.4.1",
+  "peerDependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
+  },
+  "dependencies": {
+    "@smtv/design-tokens": "^1.0.1",
+    "lottie-react": "^2.4.1"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.12",
@@ -29,6 +45,14 @@
     "@storybook/react": "^8.6.12",
     "@storybook/react-vite": "^8.6.12",
     "@storybook/testing-library": "^0.2.2",
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "typescript": "^5.0.0",
     "vite": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,6 +1,4 @@
 /* Utility Classes */
-/* Comment out local tokens to avoid conflicts */
-/* @import './design-tokens.css'; */
 
 /* Text Colors */
 .text-primary { color: var(--color-text-primary); }
