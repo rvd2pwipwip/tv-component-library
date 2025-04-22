@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withSpatialNavigation } from './spatialNavigationDecorator';
 
 // Import design system styles in correct order
@@ -22,6 +22,36 @@ const storybookStyles = `
     overflow: visible !important;
   }
 `;
+
+// Keyboard event handler
+const withKeyboardEvents = (Story: React.ComponentType) => {
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Log keyboard events for debugging
+      console.log('Key pressed:', event.key);
+      
+      // Add specific key handlers here
+      switch (event.key) {
+        case 'Enter':
+          console.log('Enter key pressed - Open channel info');
+          break;
+        case 'b':
+        case 'B':
+          console.log('B key pressed - Go back');
+          break;
+        case 'ArrowLeft':
+        case 'ArrowRight':
+          console.log(`${event.key} pressed - Navigate between cards`);
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  return <Story />;
+};
 
 const preview: Preview = {
   parameters: {
@@ -52,6 +82,7 @@ const preview: Preview = {
   },
   decorators: [
     withSpatialNavigation,
+    withKeyboardEvents,
     (Story) => (
       <>
         <style>{storybookStyles}</style>
