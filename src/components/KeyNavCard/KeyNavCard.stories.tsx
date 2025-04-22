@@ -77,4 +77,20 @@ export const NoThumbnail: Story = {
     title: 'Channel Without Thumbnail',
     isPlaying: false,
   },
+};
+
+// Navigation test story
+export const NavigationTest: Story = {
+  args: {
+    title: 'Navigation Test Card',
+    thumbnailUrl: 'https://picsum.photos/300/300',
+    isPlaying: false,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Test story for keyboard navigation. Use arrow keys, Enter, and B key to test navigation.',
+      },
+    },
+  },
 }; 
