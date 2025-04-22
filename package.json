@@ -33,6 +33,7 @@
     "react-dom": "^19.1.0"
   },
   "dependencies": {
+    "@noriginmedia/react-spatial-navigation": "^2.12.9",
     "@smtv/design-tokens": "^1.0.1",
     "lottie-react": "^2.4.1"
   },
