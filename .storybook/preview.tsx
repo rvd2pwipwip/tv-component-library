@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import React from 'react';
+import { withSpatialNavigation } from './spatialNavigationDecorator';
 
 // Import design system styles in correct order
 import '../src/styles/design-tokens-npm.css';
@@ -50,6 +51,7 @@ const preview: Preview = {
     },
   },
   decorators: [
+    withSpatialNavigation,
     (Story) => (
       <>
         <style>{storybookStyles}</style>
