@@ -1,6 +1,6 @@
 {
   "name": "@smtv/tv-component-library",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TV-optimized React component library for audio streaming applications",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

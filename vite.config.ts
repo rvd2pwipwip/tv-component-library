@@ -8,7 +8,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'TVComponentLibrary',
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) => `index.${format === 'es' ? 'esm' : format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
