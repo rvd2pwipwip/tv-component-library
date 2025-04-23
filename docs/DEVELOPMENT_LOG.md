@@ -32,6 +32,48 @@
 - Accessibility first
 - Performance optimized
 
+## Navigation Architecture Decision - [25/04/16]
+
+### Key Decision
+- Navigation and interactivity will be managed at the application level, not within individual components
+- This aligns with the building blocks approach and component design philosophy
+
+### Rationale
+- Components remain simple and predictable
+- Parent components (like swimlanes or grids) handle navigation
+- Applications can implement their own navigation patterns
+- Easier to adapt to different use cases
+- Follows design system best practices
+- Enables easier testing and documentation
+
+### Implementation Impact
+- Components focus on their core responsibilities:
+  - Styling and layout
+  - Internal state management
+  - Props for customization
+  - Accessibility and keyboard-focusability
+- Parent components in consuming applications handle:
+  - Navigation patterns
+  - Focus and keyboard events
+  - Component composition
+  - Interaction patterns
+
+### Benefits
+1. **Flexibility**
+   - Components can be used in different contexts
+   - Navigation patterns can be customized
+   - Easier to adapt to new requirements
+
+2. **Maintainability**
+   - Simpler component code
+   - Clear separation of concerns
+   - Easier to test and debug
+
+3. **Reusability**
+   - Components are more portable
+   - Less coupling to specific navigation patterns
+   - Easier to share between projects
+
 ## Component Migration Plan
 
 ### Phase 1: Core Components
