@@ -11153,7 +11153,35 @@ const v = "5.5.7", meta = {
       ]
     }
   );
+}, Button = ({
+  label: t,
+  onClick: e,
+  variant: r = "primary",
+  size: i = "medium",
+  icon: s,
+  showIcon: a,
+  ...n
+}) => {
+  const l = [
+    "tv-button",
+    `tv-button--${r}`,
+    `tv-button--${i}`
+  ].join(" ");
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "button",
+    {
+      type: "button",
+      className: l,
+      onClick: e,
+      ...n,
+      children: [
+        a && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__icon", children: s }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__label", children: t })
+      ]
+    }
+  );
 };
 export {
+  Button,
   ChannelCard
 };

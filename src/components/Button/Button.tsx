@@ -3,9 +3,9 @@ import './Button.css';
 
 export interface ButtonProps {
   /**
-   * Button contents
+   * Content to display inside the button (text, icon, etc.)
    */
-  label: string;
+  children?: React.ReactNode; // <-- Added this line
   /**
    * Optional click handler
    */
@@ -26,7 +26,7 @@ export interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  label,
+  children,
   onClick,
   variant = 'primary',
   size = 'medium',
@@ -48,7 +48,7 @@ export const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {showIcon && <span className="tv-button__icon">{icon}</span>}
-      <span className="tv-button__label">{label}</span>
+      <span className="tv-button__label">{children}</span>
     </button>
   );
 }; 

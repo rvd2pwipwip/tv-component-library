@@ -43,10 +43,6 @@ const meta: Meta<typeof Button> = {
       options: ['small', 'medium', 'large'],
       description: 'The size of the button',
     },
-    label: {
-      control: 'text',
-      description: 'The text content of the button',
-    },
     onClick: {
       action: 'clicked',
       description: 'Optional click handler',
@@ -65,7 +61,7 @@ type Story = StoryObj<typeof Button>;
 // Base button
 export const Default: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     variant: 'primary',
     size: 'medium',
     showIcon: false,
@@ -76,7 +72,7 @@ export const Default: Story = {
 // Size variants
 export const ButtonSmall: Story = {
   args: {
-    label: 'Small',
+    children: 'Small',
     variant: 'primary',
     size: 'small',
     showIcon: false,
@@ -86,7 +82,7 @@ export const ButtonSmall: Story = {
 
 export const ButtonMedium: Story = {
   args: {
-    label: 'Medium',
+    children: 'Medium',
     variant: 'primary',
     size: 'medium',
     showIcon: false,
@@ -96,7 +92,7 @@ export const ButtonMedium: Story = {
 
 export const ButtonLarge: Story = {
   args: {
-    label: 'Large',
+    children: 'Large',
     variant: 'primary',
     size: 'large',
     showIcon: false,
@@ -107,7 +103,7 @@ export const ButtonLarge: Story = {
 // Style variants
 export const ButtonPrimary: Story = {
   args: {
-    label: 'Primary',
+    children: 'Primary',
     variant: 'primary',
     size: 'medium',
     showIcon: false,
@@ -117,7 +113,7 @@ export const ButtonPrimary: Story = {
 
 export const ButtonSecondary: Story = {
   args: {
-    label: 'Secondary',
+    children: 'Secondary',
     variant: 'secondary',
     size: 'medium',
     showIcon: false,
@@ -128,7 +124,7 @@ export const ButtonSecondary: Story = {
 // Combined variants
 export const ButtonSmallSecondary: Story = {
   args: {
-    label: 'Small Secondary',
+    children: 'Small Secondary',
     variant: 'secondary',
     size: 'small',
     showIcon: false,
@@ -138,7 +134,7 @@ export const ButtonSmallSecondary: Story = {
 
 export const ButtonLargeSecondary: Story = {
   args: {
-    label: 'Large Secondary',
+    children: 'Large Secondary',
     variant: 'secondary',
     size: 'large',
     showIcon: false,
@@ -149,7 +145,7 @@ export const ButtonLargeSecondary: Story = {
 // Icon variants (icon before label)
 export const ButtonPreIcon: Story = {
   args: {
-    label: 'Play',
+    children: 'Play',
     variant: 'primary',
     size: 'medium',
     showIcon: true,
@@ -159,7 +155,7 @@ export const ButtonPreIcon: Story = {
 
 export const ButtonPreIconSmall: Story = {
   args: {
-    label: 'Play',
+    children: 'Play',
     variant: 'primary',
     size: 'small',
     showIcon: true,
@@ -169,7 +165,7 @@ export const ButtonPreIconSmall: Story = {
 
 export const ButtonPreIconLarge: Story = {
   args: {
-    label: 'Play',
+    children: 'Play',
     variant: 'primary',
     size: 'large',
     showIcon: true,
