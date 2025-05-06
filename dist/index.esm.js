@@ -11154,7 +11154,7 @@ const v = "5.5.7", meta = {
     }
   );
 }, Button = ({
-  label: t,
+  children: t,
   onClick: e,
   variant: r = "primary",
   size: i = "medium",

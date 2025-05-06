@@ -55,7 +55,7 @@
 
 .tv-button--secondary {
   background-color: transparent;
-  border: 2px solid var(--color-text-secondary);
+  border: 2px solid var(--color-outline-secondary);
   color: var(--color-text-primary);
 }
 

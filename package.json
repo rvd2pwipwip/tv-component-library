@@ -33,7 +33,7 @@
     "react-dom": "^19.1.0"
   },
   "dependencies": {
-    "@smtv/design-tokens": "^1.0.1",
+    "@smtv/design-tokens": "^1.0.2",
     "lottie-react": "^2.4.1"
   },
   "devDependencies": {
