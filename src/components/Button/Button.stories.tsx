@@ -1,13 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Button } from './Button';
-
-// Example icon component
-const PlayIcon: React.FC = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor">
-    <path d="M8 5v14l11-7z" />
-  </svg>
-);
+import { Home } from 'stingray-icons';
 
 const meta: Meta<typeof Button> = {
   title: 'TV/Button',
@@ -65,7 +59,6 @@ export const Default: Story = {
     variant: 'primary',
     size: 'medium',
     showIcon: false,
-    icon: <PlayIcon />,
   },
 };
 
@@ -76,7 +69,6 @@ export const ButtonSmall: Story = {
     variant: 'primary',
     size: 'small',
     showIcon: false,
-    icon: <PlayIcon />,
   },
 };
 
@@ -86,7 +78,6 @@ export const ButtonMedium: Story = {
     variant: 'primary',
     size: 'medium',
     showIcon: false,
-    icon: <PlayIcon />,
   },
 };
 
@@ -96,7 +87,6 @@ export const ButtonLarge: Story = {
     variant: 'primary',
     size: 'large',
     showIcon: false,
-    icon: <PlayIcon />,
   },
 };
 
@@ -107,7 +97,6 @@ export const ButtonPrimary: Story = {
     variant: 'primary',
     size: 'medium',
     showIcon: false,
-    icon: <PlayIcon />,
   },
 };
 
@@ -117,7 +106,6 @@ export const ButtonSecondary: Story = {
     variant: 'secondary',
     size: 'medium',
     showIcon: false,
-    icon: <PlayIcon />,
   },
 };
 
@@ -128,7 +116,6 @@ export const ButtonSmallSecondary: Story = {
     variant: 'secondary',
     size: 'small',
     showIcon: false,
-    icon: <PlayIcon />,
   },
 };
 
@@ -138,37 +125,36 @@ export const ButtonLargeSecondary: Story = {
     variant: 'secondary',
     size: 'large',
     showIcon: false,
-    icon: <PlayIcon />,
   },
 };
 
 // Icon variants (icon before label)
 export const ButtonPreIcon: Story = {
   args: {
-    children: 'Play',
+    children: 'Home',
     variant: 'primary',
     size: 'medium',
     showIcon: true,
-    icon: <PlayIcon />,
+    icon: <Home />,
   },
 };
 
 export const ButtonPreIconSmall: Story = {
   args: {
-    children: 'Play',
+    children: 'Home',
     variant: 'primary',
     size: 'small',
     showIcon: true,
-    icon: <PlayIcon />,
+    icon: <Home />,
   },
 };
 
 export const ButtonPreIconLarge: Story = {
   args: {
-    children: 'Play',
+    children: 'Home',
     variant: 'primary',
     size: 'large',
     showIcon: true,
-    icon: <PlayIcon />,
+    icon: <Home />,
   },
 }; 
