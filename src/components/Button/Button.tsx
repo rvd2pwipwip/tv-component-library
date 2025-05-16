@@ -1,7 +1,11 @@
 import React from 'react';
 import './Button.css';
 
-export interface ButtonProps {
+// Extend the ButtonProps interface with React.ButtonHTMLAttributes<HTMLButtonElement>
+// to automatically support all standard HTML button attributes (like aria-label, disabled, tabIndex, etc.).
+// This makes the Button component more flexible, accessible, and future-proof,
+// so it can be used just like a native <button> in any context.
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * Content to display inside the button (text, icon, etc.)
    */
@@ -13,7 +17,7 @@ export interface ButtonProps {
   /**
    * Button variant
    */
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'transparent';
   /**
    * Button size
    */
@@ -23,6 +27,10 @@ export interface ButtonProps {
    */
   icon?: React.ReactNode;
   showIcon?: boolean;
+  // /**
+  //  * Button aria-label
+  //  */
+  // 'aria-label'?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -34,11 +42,13 @@ export const Button: React.FC<ButtonProps> = ({
   showIcon,
   ...props
 }) => {
-  const buttonClasses = [
-    'tv-button',
-    `tv-button--${variant}`,
-    `tv-button--${size}`,
-  ].join(' ');
+  const isIconOnly = showIcon && !children;
+const buttonClasses = [
+  'tv-button',
+  `tv-button--${variant}`,
+  `tv-button--${size}`,
+  isIconOnly && 'tv-button--icon-only',
+].filter(Boolean).join(' ');
 
   return (
     <button

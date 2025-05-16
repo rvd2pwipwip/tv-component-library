@@ -1,6 +1,6 @@
 {
   "name": "@smtv/tv-component-library",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "TV-optimized React component library for audio streaming applications",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -33,9 +33,9 @@
     "react-dom": "^19.1.0"
   },
   "dependencies": {
-    "@smtv/design-tokens": "^1.0.2",
+    "@smtv/design-tokens": "^1.0.3",
     "lottie-react": "^2.4.1",
-    "stingray-icons": "^1.0.1"
+    "stingray-icons": "^1.0.3"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.12",

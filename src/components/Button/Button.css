@@ -9,14 +9,14 @@
   font-weight: var(--font-weight-bold);
   white-space: nowrap;
   line-height: 1;
-  letter-spacing: 0.75px;
+  letter-spacing: 0.5px;
   transition: all var(--animation-transition-duration) var(--animation-transition-timing);
   
   /* Default size */
-  height: var(--component-button-height-medium);
-  padding: 16px 24px;
+  /* height: var(--component-button-height-medium); */
+  padding: var(--component-button-padding);
   font-size: var(--font-size-body);
-  min-width: var(--component-button-min-width-default);
+  /* min-width: var(--component-button-min-width-default); */
   border-radius: 8px;
 }
 
@@ -24,21 +24,37 @@
   display: flex;
   align-items: center;
   margin-right: 0.5em;
+  /* Icon size will be controlled by font-size inheritance */
 }
 
-.tv-button__icon svg {
-  width: 1.2em;
-  height: 1.2em;
+.tv-button--icon-only .tv-button__icon {
+  margin-right: 0; /* Remove margin when icon is alone */
 }
 
-.tv-button--small .tv-button__icon svg {
-  width: 1em;
-  height: 1em;
+.tv-button--icon-only {
+  padding: var(--spacing-m20);
 }
 
-.tv-button--large .tv-button__icon svg {
-  width: 1.4em;
-  height: 1.4em;
+/* Override padding for small and large icon-only buttons */
+.tv-button--small.tv-button--icon-only {
+  padding: var(--spacing-s12);
+}
+
+.tv-button--large.tv-button--icon-only {
+  padding: var(--spacing-l28);
+}
+
+/* Icon size for each button size */
+.tv-button.tv-button--small .tv-button__icon {
+  font-size: 1em;
+}
+
+.tv-button.tv-button--medium .tv-button__icon {
+  font-size: 1.2em;
+}
+
+.tv-button.tv-button--large .tv-button__icon {
+  font-size: 1.8em;
 }
 
 .tv-button:focus {
@@ -53,6 +69,11 @@
   color: var(--color-text-primary);
 }
 
+.tv-button--transparent {
+  background-color: transparent;
+  color: var(--color-text-primary);
+}
+
 .tv-button--secondary {
   background-color: transparent;
   border: 2px solid var(--color-outline-secondary);
@@ -62,18 +83,10 @@
 /* Sizes */
 .tv-button--small {
   font-size: var(--font-size-small);
-  min-width: var(--component-button-min-width-small);
-  height: var(--component-button-height-small);
-}
-
-.tv-button--medium {
-  font-size: var(--font-size-body);
-  min-width: var(--component-button-min-width-default);
-  height: var(--component-button-height-medium);
+  padding: var(--spacing-s12) var(--spacing-md);
 }
 
 .tv-button--large {
   font-size: var(--font-size-h3);
-  min-width: var(--component-button-min-width-large);
-  height: var(--component-button-height-large);
+  padding: var(--spacing-lg) var(--spacing-xl);
 }

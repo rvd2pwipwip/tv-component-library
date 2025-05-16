@@ -11162,16 +11162,17 @@ const v = "5.5.7", meta = {
   showIcon: a,
   ...n
 }) => {
-  const l = [
+  const l = a && !t, o = [
     "tv-button",
     `tv-button--${r}`,
-    `tv-button--${i}`
-  ].join(" ");
+    `tv-button--${i}`,
+    l && "tv-button--icon-only"
+  ].filter(Boolean).join(" ");
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "button",
     {
       type: "button",
-      className: l,
+      className: o,
       onClick: e,
       ...n,
       children: [

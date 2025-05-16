@@ -47,16 +47,44 @@ const TokenTest: React.FC = () => {
             <div className="spacing-item__label">SM (--spacing-sm)</div>
           </div>
           <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-s12)' }}></div>
+            <div className="spacing-item__label">S12 (--spacing-s12)</div>
+          </div>
+          <div className="spacing-item">
             <div className="spacing-item__bar" style={{ width: 'var(--spacing-md)' }}></div>
             <div className="spacing-item__label">MD (--spacing-md)</div>
+          </div>
+          <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-m20)' }}></div>
+            <div className="spacing-item__label">M20 (--spacing-m20)</div>
           </div>
           <div className="spacing-item">
             <div className="spacing-item__bar" style={{ width: 'var(--spacing-lg)' }}></div>
             <div className="spacing-item__label">LG (--spacing-lg)</div>
           </div>
           <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-l28)' }}></div>
+            <div className="spacing-item__label">L28 (--spacing-l28)</div>
+          </div>
+          <div className="spacing-item">
             <div className="spacing-item__bar" style={{ width: 'var(--spacing-xl)' }}></div>
             <div className="spacing-item__label">XL (--spacing-xl)</div>
+          </div>
+          <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-x36)' }}></div>
+            <div className="spacing-item__label">X36 (--spacing-x36)</div>
+          </div>
+          <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-x40)' }}></div>
+            <div className="spacing-item__label">X40 (--spacing-x40)</div>
+          </div>
+          <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-x44)' }}></div>
+            <div className="spacing-item__label">X44 (--spacing-x44)</div>
+          </div>
+          <div className="spacing-item">
+            <div className="spacing-item__bar" style={{ width: 'var(--spacing-xxl)' }}></div>
+            <div className="spacing-item__label">XXL (--spacing-xxl)</div>
           </div>
         </div>
       </div>

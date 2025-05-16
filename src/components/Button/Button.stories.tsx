@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
-import { Home } from 'stingray-icons';
+import { Home, MagnifyingGlass, Gear } from 'stingray-icons';
 
 const meta: Meta<typeof Button> = {
   title: 'TV/Button',
@@ -28,7 +28,7 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'transparent'],
       description: 'The visual style of the button',
     },
     size: {
@@ -44,6 +44,16 @@ const meta: Meta<typeof Button> = {
       control: 'boolean',
       description: 'Whether to show an icon',
       defaultValue: false,
+    },
+    icon: {
+      control: 'select',
+      options: ['Home', 'Search', 'Settings'],
+      mapping: {
+        Home: <Home />,
+        Search: <MagnifyingGlass />,
+        Settings: <Gear />,
+      },
+      description: 'Icon to display in the button',
     },
   },
 };
@@ -108,6 +118,17 @@ export const ButtonSecondary: Story = {
   },
 };
 
+export const ButtonTransparent: Story = {
+  args: {
+    children: null,
+    variant: 'transparent',
+    size: 'medium',
+    showIcon: true,
+    icon: <Home />,
+    'aria-label': 'Home',
+  },
+};
+
 // Combined variants
 export const ButtonSmallSecondary: Story = {
   args: {
@@ -124,6 +145,28 @@ export const ButtonLargeSecondary: Story = {
     variant: 'secondary',
     size: 'large',
     showIcon: false,
+  },
+};
+
+/***   */
+
+export const ButtonSmallTransparent: Story = {
+  args: {
+    children: null,
+    variant: 'transparent',
+    size: 'small',
+    showIcon: true,
+    icon: <Home />,
+  },
+};
+
+export const ButtonLargeTransparent: Story = {
+  args: {
+    children: null,
+    variant: 'transparent',
+    size: 'large',
+    showIcon: true,
+    icon: <Home />,
   },
 };
 
