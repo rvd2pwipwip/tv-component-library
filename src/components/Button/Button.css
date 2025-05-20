@@ -6,25 +6,21 @@
   border: none;
   cursor: pointer;
   font-family: var(--font-family-primary);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-body);
   white-space: nowrap;
   line-height: 1;
   letter-spacing: 0.5px;
   transition: all var(--animation-transition-duration) var(--animation-transition-timing);
-  
-  /* Default size */
-  /* height: var(--component-button-height-medium); */
   padding: var(--component-button-padding);
-  font-size: var(--font-size-body);
-  /* min-width: var(--component-button-min-width-default); */
   border-radius: 8px;
 }
 
 .tv-button__icon {
+  /* Icon size is controlled by font-size inheritance */
   display: flex;
   align-items: center;
   margin-right: 0.5em;
-  /* Icon size will be controlled by font-size inheritance */
 }
 
 .tv-button--icon-only .tv-button__icon {
@@ -42,19 +38,6 @@
 
 .tv-button--large.tv-button--icon-only {
   padding: var(--spacing-l28);
-}
-
-/* Icon size for each button size */
-.tv-button.tv-button--small .tv-button__icon {
-  font-size: 1em;
-}
-
-.tv-button.tv-button--medium .tv-button__icon {
-  font-size: 1.2em;
-}
-
-.tv-button.tv-button--large .tv-button__icon {
-  font-size: 1.8em;
 }
 
 .tv-button:focus {
