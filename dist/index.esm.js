@@ -1,4 +1,4 @@
-import require$$0, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 var commonjsGlobal = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
 function getDefaultExportFromCjs(t) {
   return t && t.__esModule && Object.prototype.hasOwnProperty.call(t, "default") ? t.default : t;
@@ -239,7 +239,7 @@ React keys must be passed directly to JSX without using spread:
     function E(T) {
       typeof T == "object" && T !== null && T.$$typeof === S && T._store && (T._store.validated = 1);
     }
-    var u = require$$0, S = Symbol.for("react.transitional.element"), g = Symbol.for("react.portal"), d = Symbol.for("react.fragment"), A = Symbol.for("react.strict_mode"), c = Symbol.for("react.profiler"), m = Symbol.for("react.consumer"), f = Symbol.for("react.context"), b = Symbol.for("react.forward_ref"), _ = Symbol.for("react.suspense"), C = Symbol.for("react.suspense_list"), F = Symbol.for("react.memo"), R = Symbol.for("react.lazy"), L = Symbol.for("react.activity"), H = Symbol.for("react.client.reference"), G = u.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, j = Array.isArray, N = console.createTask ? console.createTask : function() {
+    var u = React, S = Symbol.for("react.transitional.element"), g = Symbol.for("react.portal"), d = Symbol.for("react.fragment"), A = Symbol.for("react.strict_mode"), c = Symbol.for("react.profiler"), m = Symbol.for("react.consumer"), f = Symbol.for("react.context"), b = Symbol.for("react.forward_ref"), _ = Symbol.for("react.suspense"), C = Symbol.for("react.suspense_list"), F = Symbol.for("react.memo"), R = Symbol.for("react.lazy"), L = Symbol.for("react.activity"), H = Symbol.for("react.client.reference"), G = u.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = Object.prototype.hasOwnProperty, j = Array.isArray, N = console.createTask ? console.createTask : function() {
       return null;
     };
     u = {
@@ -8157,7 +8157,7 @@ var _excluded$1 = ["animationData", "loop", "autoplay", "initialSegment", "onCom
       };
     }
   }, [l, o, p, y, E, u, S, g, d, A]);
-  var T = /* @__PURE__ */ require$$0.createElement("div", _objectSpread2({
+  var T = /* @__PURE__ */ React.createElement("div", _objectSpread2({
     style: r,
     ref: F
   }, c));
@@ -11113,75 +11113,81 @@ const v = "5.5.7", meta = {
       style: n
     }
   ) });
-}, ChannelCard = ({
-  title: t,
-  thumbnailUrl: e,
-  isPlaying: r = !1,
-  onClick: i,
-  onFocus: s,
-  onBlur: a,
-  ...n
-}) => {
-  const l = [
-    "tv-channel-card",
-    r ? "tv-channel-card--playing" : ""
-  ].join(" ");
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "div",
-    {
-      className: l,
-      onClick: i,
-      onFocus: s,
-      onBlur: a,
-      tabIndex: 0,
-      role: "button",
-      "aria-label": `${t}${r ? " (Now Playing)" : ""}`,
-      ...n,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "tv-channel-card__thumbnail", children: [
-          e ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "img",
-            {
-              src: e,
-              alt: `${t} thumbnail`,
-              className: "tv-channel-card__image"
-            }
-          ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__placeholder" }),
-          r && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__playing-indicator", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PlayingAnimation, {}) })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "tv-channel-card__title", children: t })
-      ]
-    }
-  );
-}, Button = ({
-  children: t,
-  onClick: e,
-  variant: r = "primary",
-  size: i = "medium",
-  icon: s,
-  showIcon: a,
-  ...n
-}) => {
-  const l = a && !t, o = [
-    "tv-button",
-    `tv-button--${r}`,
-    `tv-button--${i}`,
-    l && "tv-button--icon-only"
-  ].filter(Boolean).join(" ");
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "button",
-    {
-      type: "button",
-      className: o,
-      onClick: e,
-      ...n,
-      children: [
-        a && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__icon", children: s }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__label", children: t })
-      ]
-    }
-  );
-};
+}, ChannelCard = React.forwardRef(
+  ({
+    title: t,
+    thumbnailUrl: e,
+    isPlaying: r = !1,
+    onClick: i,
+    onFocus: s,
+    onBlur: a,
+    ...n
+  }, l) => {
+    const o = [
+      "tv-channel-card",
+      r ? "tv-channel-card--playing" : ""
+    ].join(" ");
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        ref: l,
+        className: o,
+        onClick: i,
+        onFocus: s,
+        onBlur: a,
+        tabIndex: 0,
+        role: "button",
+        "aria-label": `${t}${r ? " (Now Playing)" : ""}`,
+        ...n,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "tv-channel-card__thumbnail", children: [
+            e ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "img",
+              {
+                src: e,
+                alt: `${t} thumbnail`,
+                className: "tv-channel-card__image"
+              }
+            ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__placeholder" }),
+            r && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__playing-indicator", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PlayingAnimation, {}) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "tv-channel-card__title", children: t })
+        ]
+      }
+    );
+  }
+), Button = React.forwardRef(
+  ({
+    children: t,
+    onClick: e,
+    variant: r = "primary",
+    size: i = "medium",
+    icon: s,
+    showIcon: a,
+    ...n
+  }, l) => {
+    const o = a && !t, p = [
+      "tv-button",
+      `tv-button--${r}`,
+      `tv-button--${i}`,
+      o && "tv-button--icon-only"
+    ].filter(Boolean).join(" ");
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "button",
+      {
+        ref: l,
+        type: "button",
+        className: p,
+        onClick: e,
+        ...n,
+        children: [
+          a && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__icon", children: s }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__label", children: t })
+        ]
+      }
+    );
+  }
+);
 export {
   Button,
   ChannelCard
