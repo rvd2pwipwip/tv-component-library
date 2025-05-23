@@ -40,7 +40,10 @@
   padding: var(--spacing-l28);
 }
 
-.tv-button:focus {
+/* Remove or override the old focus rule */
+/* .tv-button:focus { ... } */
+
+.tv-button:focus-visible {
   outline: var(--focus-outline-width) solid var(--color-focus-ring);
   outline-offset: var(--focus-outline-offset);
   transform: scale(var(--animation-focus-scale));

@@ -11122,40 +11122,41 @@ const v = "5.5.7", meta = {
     onFocus: s,
     onBlur: a,
     ...n
-  }, l) => {
-    const o = [
-      "tv-channel-card",
-      r ? "tv-channel-card--playing" : ""
-    ].join(" ");
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "div",
-      {
-        ref: l,
-        className: o,
-        onClick: i,
-        onFocus: s,
-        onBlur: a,
-        tabIndex: 0,
-        role: "button",
-        "aria-label": `${t}${r ? " (Now Playing)" : ""}`,
-        ...n,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "tv-channel-card__thumbnail", children: [
-            e ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "img",
-              {
-                src: e,
-                alt: `${t} thumbnail`,
-                className: "tv-channel-card__image"
-              }
-            ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__placeholder" }),
-            r && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__playing-indicator", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PlayingAnimation, {}) })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "tv-channel-card__title", children: t })
-        ]
-      }
-    );
-  }
+  }, l) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "tv-channel-card",
+      onClick: i,
+      ...n,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            ref: l,
+            className: "tv-channel-card__thumbnail",
+            tabIndex: 0,
+            role: "button",
+            "aria-label": `${t}${r ? " (Now Playing)" : ""}`,
+            onClick: i,
+            onFocus: s,
+            onBlur: a,
+            children: [
+              e ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "img",
+                {
+                  src: e,
+                  alt: `${t} thumbnail`,
+                  className: "tv-channel-card__image"
+                }
+              ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__placeholder" }),
+              r && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__playing-indicator", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PlayingAnimation, {}) })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "tv-channel-card__title", children: t })
+      ]
+    }
+  )
 ), Button = React.forwardRef(
   ({
     children: t,

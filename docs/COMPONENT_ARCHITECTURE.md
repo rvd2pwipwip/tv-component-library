@@ -78,3 +78,15 @@ When using these components:
 2. Consider using a navigation library like Norigin Spatial Navigation
 3. Test navigation patterns thoroughly
 4. Document your navigation implementation 
+
+## Accessibility and Focus Ring
+
+All interactive components (e.g., ChannelCard, Button) use the CSS :focus-visible pseudo-class for focus ring styling. This ensures:
+- The focus ring appears only when navigating via keyboard or remote control.
+- Mouse users do not see the focus ring, preventing visual clutter.
+- Consistent, accessible feedback for TV and 10ft interfaces.
+
+**Rationale:**
+- TV interfaces rely on clear focus states for remote/keyboard navigation.
+- Mouse users do not require a focus ring for navigation.
+- This approach aligns with accessibility best practices and TV UX guidelines. 

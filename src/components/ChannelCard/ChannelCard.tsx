@@ -30,33 +30,34 @@ export interface ChannelCardProps {
 }
 
 export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
-  ({
-    title,
-    thumbnailUrl,
-    isPlaying = false,
-    onClick,
-    onFocus,
-    onBlur,
-    ...props
-  }, ref) => {
-    const cardClasses = [
-      'tv-channel-card',
-      isPlaying ? 'tv-channel-card--playing' : '',
-    ].join(' ');
-
+  (
+    {
+      title,
+      thumbnailUrl,
+      isPlaying = false,
+      onClick,
+      onFocus,
+      onBlur,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <div
-        ref={ref}
-        className={cardClasses}
+        className="tv-channel-card"
         onClick={onClick}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        tabIndex={0}
-        role="button"
-        aria-label={`${title}${isPlaying ? ' (Now Playing)' : ''}`}
         {...props}
       >
-        <div className="tv-channel-card__thumbnail">
+        <div
+          ref={ref}
+          className="tv-channel-card__thumbnail"
+          tabIndex={0}
+          role="button"
+          aria-label={`${title}${isPlaying ? ' (Now Playing)' : ''}`}
+          onClick={onClick}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        >
           {thumbnailUrl ? (
             <img
               src={thumbnailUrl}

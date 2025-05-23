@@ -180,3 +180,19 @@
 - ✅ Update documentation
 - ✅ Verify all components work correctly
 - ✅ Test in different environments
+
+## Accessibility & Focus Ring Update - [Current Date]
+
+### Change Summary
+- Updated ChannelCard and Button components to use :focus-visible for focus ring styling.
+- Focus ring now appears only on keyboard/remote navigation, not on mouse click.
+- Ensures consistent, TV-appropriate focus feedback across all interactive components.
+
+### Rationale
+- Aligns with TV UX best practices: focus ring should only appear for remote/keyboard navigation.
+- Prevents visual clutter for mouse users.
+- Resolves previous inconsistency where Button showed focus ring on mouse click but ChannelCard did not.
+
+### Impact
+- Improved accessibility and user experience for TV and 10ft interfaces.
+- Consistent focus feedback across all components.
