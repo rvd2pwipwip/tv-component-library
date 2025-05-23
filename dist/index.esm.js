@@ -11122,41 +11122,35 @@ const v = "5.5.7", meta = {
     onFocus: s,
     onBlur: a,
     ...n
-  }, l) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "div",
-    {
-      className: "tv-channel-card",
-      onClick: i,
-      ...n,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "div",
-          {
-            ref: l,
-            className: "tv-channel-card__thumbnail",
-            tabIndex: 0,
-            role: "button",
-            "aria-label": `${t}${r ? " (Now Playing)" : ""}`,
-            onClick: i,
-            onFocus: s,
-            onBlur: a,
-            children: [
-              e ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "img",
-                {
-                  src: e,
-                  alt: `${t} thumbnail`,
-                  className: "tv-channel-card__image"
-                }
-              ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__placeholder" }),
-              r && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__playing-indicator", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PlayingAnimation, {}) })
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "tv-channel-card__title", children: t })
-      ]
-    }
-  )
+    // This will include Norigin's data-focus-key, data-focused, etc.
+  }, l) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "tv-channel-card", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        ref: l,
+        className: "tv-channel-card__thumbnail",
+        tabIndex: 0,
+        role: "button",
+        "aria-label": `${t}${r ? " (Now Playing)" : ""}`,
+        onClick: i,
+        onFocus: s,
+        onBlur: a,
+        ...n,
+        children: [
+          e ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "img",
+            {
+              src: e,
+              alt: `${t} thumbnail`,
+              className: "tv-channel-card__image"
+            }
+          ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__placeholder" }),
+          r && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "tv-channel-card__playing-indicator", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PlayingAnimation, {}) })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "tv-channel-card__title", children: t })
+  ] })
 ), Button = React.forwardRef(
   ({
     children: t,
@@ -11166,6 +11160,7 @@ const v = "5.5.7", meta = {
     icon: s,
     showIcon: a,
     ...n
+    // This will include Norigin's data-focus-key, data-focused, etc.
   }, l) => {
     const o = a && !t, p = [
       "tv-button",
@@ -11173,19 +11168,23 @@ const v = "5.5.7", meta = {
       `tv-button--${i}`,
       o && "tv-button--icon-only"
     ].filter(Boolean).join(" ");
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "button",
-      {
-        ref: l,
-        type: "button",
-        className: p,
-        onClick: e,
-        ...n,
-        children: [
-          a && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__icon", children: s }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__label", children: t })
-        ]
-      }
+    return (
+      // The button is the actual focusable element for TV navigation
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "button",
+        {
+          ref: l,
+          type: "button",
+          className: p,
+          onClick: e,
+          tabIndex: 0,
+          ...n,
+          children: [
+            a && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__icon", children: s }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__label", children: t })
+          ]
+        }
+      )
     );
   }
 );
