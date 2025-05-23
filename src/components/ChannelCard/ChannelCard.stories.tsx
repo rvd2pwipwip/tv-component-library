@@ -77,4 +77,23 @@ export const NoThumbnail: Story = {
     title: 'Channel Without Thumbnail',
     isPlaying: false,
   },
+};
+
+// Focused state (simulates Norigin TV navigation focus)
+// @ts-ignore
+export const Focused: Story = {
+  args: {
+    title: 'Focused Channel',
+    thumbnailUrl: 'https://picsum.photos/300/300',
+    isPlaying: false,
+    // @ts-ignore
+    'data-focused': 'true',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the ChannelCard with data-focused="true" to simulate Norigin TV navigation focus styling.'
+      }
+    }
+  }
 }; 

@@ -199,4 +199,24 @@ export const ButtonPreIconLarge: Story = {
     showIcon: true,
     icon: <Home />,
   },
+};
+
+// Focused state (simulates Norigin TV navigation focus)
+// @ts-ignore
+export const Focused: Story = {
+  args: {
+    children: 'Focused Button',
+    variant: 'primary',
+    size: 'medium',
+    showIcon: false,
+    // @ts-ignore
+    'data-focused': 'true',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Shows the Button with data-focused="true" to simulate Norigin TV navigation focus styling.'
+      }
+    }
+  }
 }; 

@@ -55,23 +55,17 @@
   height: calc(1.2em * 2);
 }
 
-/* Focus states for TV navigation */
-.tv-channel-card:focus {
-  outline: none;
-}
-
-.tv-channel-card:focus .tv-channel-card__thumbnail {
+/* Norigin TV navigation focus ring */
+.tv-channel-card__thumbnail[data-focused="true"] {
   outline: var(--focus-outline-width) solid var(--color-focus-ring);
   outline-offset: var(--focus-outline-offset);
   transform: scale(var(--animation-focus-scale));
 }
+
+/* Remove or comment out the old focus rules */
+/* .tv-channel-card__thumbnail:focus { ... } */
+/* .tv-channel-card__thumbnail:focus-visible { ... } */
 
 .tv-channel-card--playing:focus .tv-channel-card__thumbnail {
   border-color: var(--color-focus-ring);
-}
-
-.tv-channel-card__thumbnail:focus-visible {
-  outline: var(--focus-outline-width) solid var(--color-focus-ring);
-  outline-offset: var(--focus-outline-offset);
-  transform: scale(var(--animation-focus-scale));
 } 

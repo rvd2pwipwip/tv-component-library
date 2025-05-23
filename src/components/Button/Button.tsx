@@ -9,7 +9,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   /**
    * Content to display inside the button (text, icon, etc.)
    */
-  children?: React.ReactNode; // <-- Added this line
+  children?: React.ReactNode;
   /**
    * Optional click handler
    */
@@ -27,12 +27,17 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    */
   icon?: React.ReactNode;
   showIcon?: boolean;
-  // /**
-  //  * Button aria-label
-  //  */
-  // 'aria-label'?: string;
 }
 
+/**
+ * Button - TV-optimized button component
+ *
+ * Best practice for TV navigation:
+ * - The button element is the focusable element (tabIndex, ref, etc.)
+ * - All Norigin props (data-focus-key, data-focused, etc.) are forwarded to the button
+ * - Focus ring styling should use [data-focused="true"] instead of :focus or :focus-visible
+ * - This ensures Norigin can manage both focus logic and focus styling
+ */
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({
     children,
@@ -41,7 +46,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     size = 'medium',
     icon,
     showIcon,
-    ...props
+    ...props // This will include Norigin's data-focus-key, data-focused, etc.
   }, ref) => {
     const isIconOnly = showIcon && !children;
     const buttonClasses = [
@@ -52,12 +57,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ].filter(Boolean).join(' ');
 
     return (
+      // The button is the actual focusable element for TV navigation
       <button
         ref={ref}
         type="button"
         className={buttonClasses}
         onClick={onClick}
-        {...props}
+        tabIndex={0}
+        {...props} // Forward all Norigin props (data-focused, data-focus-key, etc.)
       >
         {showIcon && <span className="tv-button__icon">{icon}</span>}
         <span className="tv-button__label">{children}</span>

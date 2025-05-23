@@ -40,14 +40,16 @@
   padding: var(--spacing-l28);
 }
 
-/* Remove or override the old focus rule */
-/* .tv-button:focus { ... } */
-
-.tv-button:focus-visible {
+/* Norigin TV navigation focus ring */
+.tv-button[data-focused="true"] {
   outline: var(--focus-outline-width) solid var(--color-focus-ring);
   outline-offset: var(--focus-outline-offset);
   transform: scale(var(--animation-focus-scale));
 }
+
+/* Remove or comment out the old focus rule */
+/* .tv-button:focus { ... } */
+/* .tv-button:focus-visible { ... } */
 
 /* Variants */
 .tv-button--primary {
