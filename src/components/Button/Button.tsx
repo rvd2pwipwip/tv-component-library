@@ -33,32 +33,35 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   // 'aria-label'?: string;
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  children,
-  onClick,
-  variant = 'primary',
-  size = 'medium',
-  icon,
-  showIcon,
-  ...props
-}) => {
-  const isIconOnly = showIcon && !children;
-const buttonClasses = [
-  'tv-button',
-  `tv-button--${variant}`,
-  `tv-button--${size}`,
-  isIconOnly && 'tv-button--icon-only',
-].filter(Boolean).join(' ');
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({
+    children,
+    onClick,
+    variant = 'primary',
+    size = 'medium',
+    icon,
+    showIcon,
+    ...props
+  }, ref) => {
+    const isIconOnly = showIcon && !children;
+    const buttonClasses = [
+      'tv-button',
+      `tv-button--${variant}`,
+      `tv-button--${size}`,
+      isIconOnly && 'tv-button--icon-only',
+    ].filter(Boolean).join(' ');
 
-  return (
-    <button
-      type="button"
-      className={buttonClasses}
-      onClick={onClick}
-      {...props}
-    >
-      {showIcon && <span className="tv-button__icon">{icon}</span>}
-      <span className="tv-button__label">{children}</span>
-    </button>
-  );
-}; 
+    return (
+      <button
+        ref={ref}
+        type="button"
+        className={buttonClasses}
+        onClick={onClick}
+        {...props}
+      >
+        {showIcon && <span className="tv-button__icon">{icon}</span>}
+        <span className="tv-button__label">{children}</span>
+      </button>
+    );
+  }
+); 
