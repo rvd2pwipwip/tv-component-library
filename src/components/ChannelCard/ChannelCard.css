@@ -68,4 +68,10 @@
 
 .tv-channel-card--playing:focus .tv-channel-card__thumbnail {
   border-color: var(--color-focus-ring);
+}
+
+.tv-channel-card__thumbnail:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-outline-offset);
+  transform: scale(var(--animation-focus-scale));
 } 
