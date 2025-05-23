@@ -29,48 +29,51 @@ export interface ChannelCardProps {
   onBlur?: () => void;
 }
 
-export const ChannelCard: React.FC<ChannelCardProps> = ({
-  title,
-  thumbnailUrl,
-  isPlaying = false,
-  onClick,
-  onFocus,
-  onBlur,
-  ...props
-}) => {
-  const cardClasses = [
-    'tv-channel-card',
-    isPlaying ? 'tv-channel-card--playing' : '',
-  ].join(' ');
+export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
+  ({
+    title,
+    thumbnailUrl,
+    isPlaying = false,
+    onClick,
+    onFocus,
+    onBlur,
+    ...props
+  }, ref) => {
+    const cardClasses = [
+      'tv-channel-card',
+      isPlaying ? 'tv-channel-card--playing' : '',
+    ].join(' ');
 
-  return (
-    <div
-      className={cardClasses}
-      onClick={onClick}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      tabIndex={0}
-      role="button"
-      aria-label={`${title}${isPlaying ? ' (Now Playing)' : ''}`}
-      {...props}
-    >
-      <div className="tv-channel-card__thumbnail">
-        {thumbnailUrl ? (
-          <img
-            src={thumbnailUrl}
-            alt={`${title} thumbnail`}
-            className="tv-channel-card__image"
-          />
-        ) : (
-          <div className="tv-channel-card__placeholder" />
-        )}
-        {isPlaying && (
-          <div className="tv-channel-card__playing-indicator">
-            <PlayingAnimation />
-          </div>
-        )}
+    return (
+      <div
+        ref={ref}
+        className={cardClasses}
+        onClick={onClick}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        tabIndex={0}
+        role="button"
+        aria-label={`${title}${isPlaying ? ' (Now Playing)' : ''}`}
+        {...props}
+      >
+        <div className="tv-channel-card__thumbnail">
+          {thumbnailUrl ? (
+            <img
+              src={thumbnailUrl}
+              alt={`${title} thumbnail`}
+              className="tv-channel-card__image"
+            />
+          ) : (
+            <div className="tv-channel-card__placeholder" />
+          )}
+          {isPlaying && (
+            <div className="tv-channel-card__playing-indicator">
+              <PlayingAnimation />
+            </div>
+          )}
+        </div>
+        <h3 className="tv-channel-card__title">{title}</h3>
       </div>
-      <h3 className="tv-channel-card__title">{title}</h3>
-    </div>
-  );
-}; 
+    );
+  }
+); 
