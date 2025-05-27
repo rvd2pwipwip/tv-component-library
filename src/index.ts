@@ -1,3 +1,4 @@
+import './styles/main.css';
 // Export all components here
 export * from './components/ChannelCard/ChannelCard';
 export * from './components/Button/Button';
