@@ -201,21 +201,19 @@ export const ButtonPreIconLarge: Story = {
   },
 };
 
-// Focused state (simulates Norigin TV navigation focus)
-// @ts-ignore
+// Focused state (universal focus ring)
 export const Focused: Story = {
   args: {
     children: 'Focused Button',
     variant: 'primary',
     size: 'medium',
     showIcon: false,
-    // @ts-ignore
-    'data-focused': 'true',
+    focused: true,
   },
   parameters: {
     docs: {
       description: {
-        story: 'Shows the Button with data-focused="true" to simulate Norigin TV navigation focus styling.'
+        story: 'Shows the Button with the universal .tv-focus-ring utility class for the focus ring. This demonstrates the single source of truth for TV focus styling.'
       }
     }
   }

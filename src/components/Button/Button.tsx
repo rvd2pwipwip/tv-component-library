@@ -27,6 +27,10 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    */
   icon?: React.ReactNode;
   showIcon?: boolean;
+  /**
+   * Whether the button is currently focused (for custom navigation)
+   */
+  focused?: boolean;
 }
 
 /**
@@ -46,6 +50,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     size = 'medium',
     icon,
     showIcon,
+    focused = false,
     ...props // This will include Norigin's data-focus-key, data-focused, etc.
   }, ref) => {
     const isIconOnly = showIcon && !children;
@@ -54,6 +59,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       `tv-button--${variant}`,
       `tv-button--${size}`,
       isIconOnly && 'tv-button--icon-only',
+      focused && 'tv-focus-ring',
     ].filter(Boolean).join(' ');
 
     return (

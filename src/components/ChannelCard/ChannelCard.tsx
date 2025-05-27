@@ -27,6 +27,10 @@ export interface ChannelCardProps {
    * Optional blur handler for TV navigation
    */
   onBlur?: () => void;
+  /**
+   * Whether the card is currently focused (for custom navigation)
+   */
+  focused?: boolean;
 }
 
 /**
@@ -47,7 +51,7 @@ export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
       onClick,
       onFocus,
       onBlur,
-      ...props // This will include Norigin's data-focus-key, data-focused, etc.
+      focused = false,
     },
     ref
   ) => {
@@ -56,14 +60,13 @@ export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
         {/* The thumbnail is the actual focusable element for TV navigation */}
         <div
           ref={ref}
-          className="tv-channel-card__thumbnail"
+          className={`tv-channel-card__thumbnail${focused ? ' tv-focus-ring' : ''}`}
           tabIndex={0}
           role="button"
           aria-label={`${title}${isPlaying ? ' (Now Playing)' : ''}`}
           onClick={onClick}
           onFocus={onFocus}
           onBlur={onBlur}
-          {...props} // Forward all Norigin props (data-focused, data-focus-key, etc.)
         >
           {thumbnailUrl ? (
             <img

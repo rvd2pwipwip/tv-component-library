@@ -11121,21 +11121,19 @@ const v = "5.5.7", meta = {
     onClick: i,
     onFocus: s,
     onBlur: a,
-    ...n
-    // This will include Norigin's data-focus-key, data-focused, etc.
+    focused: n = !1
   }, l) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "tv-channel-card", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
         ref: l,
-        className: "tv-channel-card__thumbnail",
+        className: `tv-channel-card__thumbnail${n ? " tv-focus-ring" : ""}`,
         tabIndex: 0,
         role: "button",
         "aria-label": `${t}${r ? " (Now Playing)" : ""}`,
         onClick: i,
         onFocus: s,
         onBlur: a,
-        ...n,
         children: [
           e ? /* @__PURE__ */ jsxRuntimeExports.jsx(
             "img",
@@ -11159,26 +11157,28 @@ const v = "5.5.7", meta = {
     size: i = "medium",
     icon: s,
     showIcon: a,
-    ...n
+    focused: n = !1,
+    ...l
     // This will include Norigin's data-focus-key, data-focused, etc.
-  }, l) => {
-    const o = a && !t, p = [
+  }, o) => {
+    const p = a && !t, y = [
       "tv-button",
       `tv-button--${r}`,
       `tv-button--${i}`,
-      o && "tv-button--icon-only"
+      p && "tv-button--icon-only",
+      n && "tv-focus-ring"
     ].filter(Boolean).join(" ");
     return (
       // The button is the actual focusable element for TV navigation
       /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "button",
         {
-          ref: l,
+          ref: o,
           type: "button",
-          className: p,
+          className: y,
           onClick: e,
           tabIndex: 0,
-          ...n,
+          ...l,
           children: [
             a && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__icon", children: s }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "tv-button__label", children: t })

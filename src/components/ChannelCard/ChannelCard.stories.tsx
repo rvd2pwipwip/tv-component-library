@@ -80,19 +80,17 @@ export const NoThumbnail: Story = {
 };
 
 // Focused state (simulates Norigin TV navigation focus)
-// @ts-ignore
 export const Focused: Story = {
   args: {
     title: 'Focused Channel',
     thumbnailUrl: 'https://picsum.photos/300/300',
     isPlaying: false,
-    // @ts-ignore
-    'data-focused': 'true',
+    focused: true,
   },
   parameters: {
     docs: {
       description: {
-        story: 'Shows the ChannelCard with data-focused="true" to simulate Norigin TV navigation focus styling.'
+        story: 'Shows the ChannelCard with the universal .tv-focus-ring utility class for the focus ring. This demonstrates the single source of truth for TV focus styling.'
       }
     }
   }
