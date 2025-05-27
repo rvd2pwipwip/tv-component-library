@@ -65,7 +65,13 @@ After editing or adding components, follow these steps to publish a new version 
    ```bash
    npm run build
    ```
-4. **Update the version number** in `package.json`
+4. **Commit and push your changes to GitHub**
+   ```bash
+   git add .
+   git commit -m "commit message"
+   git push origin main
+   ```
+5. **Update the version number** in `package.json`
    - Follow [semantic versioning](https://semver.org/):
      - Patch: bug fixes
      - Minor: new features/components
@@ -75,19 +81,13 @@ After editing or adding components, follow these steps to publish a new version 
      ```bash
      npm version patch
      ```
-5. **Login to npm** (if not already logged in)
+6. **Login to npm** (if not already logged in)
    ```bash
    npm login
    ```
-6. **Publish the package**
+7. **Publish the package**
    ```bash
    npm publish --access public
-   ```
-7. **Push your changes to GitHub**
-   ```bash
-   git add .
-   git commit -m "chore: release vX.Y.Z"
-   git push origin main
    ```
 
 **Note:**
