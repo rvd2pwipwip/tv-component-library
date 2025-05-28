@@ -22,11 +22,11 @@ export interface ChannelCardProps {
   /**
    * Optional focus handler for TV navigation
    */
-  onFocus?: () => void;
+  onFocus?: (e: React.FocusEvent<HTMLDivElement>) => void;
   /**
    * Optional blur handler for TV navigation
    */
-  onBlur?: () => void;
+  onBlur?: (e: React.FocusEvent<HTMLDivElement>) => void;
   /**
    * Whether the card is currently focused (for custom navigation)
    */
@@ -65,8 +65,19 @@ export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
           role="button"
           aria-label={`${title}${isPlaying ? ' (Now Playing)' : ''}`}
           onClick={onClick}
-          onFocus={onFocus}
-          onBlur={onBlur}
+          onFocus={(e) => { 
+            console.log('ChannelCard focused', title); 
+            if (typeof onFocus === 'function') {
+              onFocus(e);
+            }
+          }}
+          onBlur={(e) => {
+            console.log('ChannelCard onBlur', title);
+            if (typeof onBlur === 'function') {
+              onBlur(e);
+            }
+          }}
+          onKeyDown={(e) => { console.log('ChannelCard onKeyDown', e.key, title); }}
         >
           {thumbnailUrl ? (
             <img

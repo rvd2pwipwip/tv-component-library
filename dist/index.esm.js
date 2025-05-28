@@ -11132,8 +11132,15 @@ const v = "5.5.7", meta = {
         role: "button",
         "aria-label": `${t}${r ? " (Now Playing)" : ""}`,
         onClick: i,
-        onFocus: s,
-        onBlur: a,
+        onFocus: (o) => {
+          console.log("ChannelCard focused", t), typeof s == "function" && s(o);
+        },
+        onBlur: (o) => {
+          console.log("ChannelCard onBlur", t), typeof a == "function" && a(o);
+        },
+        onKeyDown: (o) => {
+          console.log("ChannelCard onKeyDown", o.key, t);
+        },
         children: [
           e ? /* @__PURE__ */ jsxRuntimeExports.jsx(
             "img",
