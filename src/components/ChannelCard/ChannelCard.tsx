@@ -31,6 +31,10 @@ export interface ChannelCardProps {
    * Whether the card is currently focused (for custom navigation)
    */
   focused?: boolean;
+  /**
+   * Collect all extra props (e.g., onKeyDown)
+   */
+  [key: string]: any;
 }
 
 /**
@@ -53,6 +57,7 @@ export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
       onFocus,
       onBlur,
       focused = false,
+      ...rest
     },
     ref
   ) => {
@@ -68,6 +73,7 @@ export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
           onClick={onClick}
           onFocus={onFocus}
           onBlur={onBlur}
+          {...rest}
         >
           {thumbnailUrl ? (
             <img
