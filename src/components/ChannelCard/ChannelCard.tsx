@@ -38,9 +38,10 @@ export interface ChannelCardProps {
  *
  * Best practice for TV navigation:
  * - The thumbnail div is the focusable element (tabIndex, ref, etc.)
- * - All Norigin props (data-focus-key, data-focused, etc.) are forwarded to the thumbnail
- * - Focus ring styling should use [data-focused="true"] instead of :focus or :focus-visible
- * - This ensures Norigin can manage both focus logic and focus styling
+ * - Navigation and Enter/OK key handling should be managed by the parent (e.g., KeyboardWrapper), not here.
+ * - onFocus/onBlur are pass-through props for optional visual or analytics effects.
+ * - Focus ring styling should use a class or data attribute (e.g., [data-focused="true"] or a `focused` prop) for TV consistency.
+ * - This keeps ChannelCard presentational and reusable across navigation systems.
  */
 export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
   (
@@ -65,19 +66,8 @@ export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
           role="button"
           aria-label={`${title}${isPlaying ? ' (Now Playing)' : ''}`}
           onClick={onClick}
-          onFocus={(e) => { 
-            console.log('ChannelCard focused', title); 
-            if (typeof onFocus === 'function') {
-              onFocus(e);
-            }
-          }}
-          onBlur={(e) => {
-            console.log('ChannelCard onBlur', title);
-            if (typeof onBlur === 'function') {
-              onBlur(e);
-            }
-          }}
-          onKeyDown={(e) => { console.log('ChannelCard onKeyDown', e.key, title); }}
+          onFocus={onFocus}
+          onBlur={onBlur}
         >
           {thumbnailUrl ? (
             <img
