@@ -47,9 +47,10 @@
   transform: scale(var(--animation-focus-scale));
 }
 
-/* Remove or comment out the old focus rule */
-/* .tv-button:focus { ... } */
-/* .tv-button:focus-visible { ... } */
+.tv-button:focus {
+  outline: var(--focus-outline-width) solid var(--color-focus-ring);
+  transform: scale(var(--animation-focus-scale));
+} 
 
 /* Variants */
 .tv-button--primary {

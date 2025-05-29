@@ -11121,12 +11121,13 @@ const v = "5.5.7", meta = {
     onClick: i,
     onFocus: s,
     onBlur: a,
-    focused: n = !1
-  }, l) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "tv-channel-card", children: [
+    focused: n = !1,
+    ...l
+  }, o) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "tv-channel-card", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
-        ref: l,
+        ref: o,
         className: `tv-channel-card__thumbnail${n ? " tv-focus-ring" : ""}`,
         tabIndex: 0,
         role: "button",
@@ -11134,6 +11135,7 @@ const v = "5.5.7", meta = {
         onClick: i,
         onFocus: s,
         onBlur: a,
+        ...l,
         children: [
           e ? /* @__PURE__ */ jsxRuntimeExports.jsx(
             "img",

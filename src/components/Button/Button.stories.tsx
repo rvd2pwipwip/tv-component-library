@@ -213,7 +213,7 @@ export const Focused: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Shows the Button with the universal .tv-focus-ring utility class for the focus ring. This demonstrates the single source of truth for TV focus styling.'
+        story: 'Shows the Button with the new universal .tv-focus-ring utility class for the focus ring. This demonstrates the single source of truth for TV focus styling, independent of Norigin spatial navigation or [data-focused] attributes.'
       }
     }
   }
