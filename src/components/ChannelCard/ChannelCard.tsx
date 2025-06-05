@@ -56,6 +56,7 @@ export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
       onClick,
       onFocus,
       onBlur,
+      onKeyDown,
       focused = false,
       ...rest
     },
