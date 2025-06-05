@@ -74,6 +74,7 @@ export const ChannelCard = React.forwardRef<HTMLDivElement, ChannelCardProps>(
           onClick={onClick}
           onFocus={onFocus}
           onBlur={onBlur}
+          onKeyDown={onKeyDown}
           {...rest}
         >
           {thumbnailUrl ? (
