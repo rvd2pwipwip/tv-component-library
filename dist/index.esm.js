@@ -11121,21 +11121,22 @@ const v = "5.5.7", meta = {
     onClick: i,
     onFocus: s,
     onBlur: a,
-    focused: n = !1,
-    ...l
-  }, o) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "tv-channel-card", children: [
+    onKeyDown: n,
+    focused: l = !1,
+    ...o
+  }, p) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "tv-channel-card", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
-        ref: o,
-        className: `tv-channel-card__thumbnail${n ? " tv-focus-ring" : ""}`,
+        ref: p,
+        className: `tv-channel-card__thumbnail${l ? " tv-focus-ring" : ""}`,
         tabIndex: 0,
         role: "button",
         "aria-label": `${t}${r ? " (Now Playing)" : ""}`,
         onClick: i,
         onFocus: s,
         onBlur: a,
-        ...l,
+        ...o,
         children: [
           e ? /* @__PURE__ */ jsxRuntimeExports.jsx(
             "img",
