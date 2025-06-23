@@ -1,5 +1,6 @@
-import './styles/main.css';
+import "./styles/main.css";
 // Export all components here
-export * from './components/ChannelCard/ChannelCard';
-export * from './components/Button/Button';
-// Add more component exports as they are created 
+export * from "./components/ChannelCard/ChannelCard";
+export * from "./components/CategoryCard/CategoryCard";
+export * from "./components/Button/Button";
+// Add more component exports as they are created
